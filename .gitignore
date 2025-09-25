@@ -1,0 +1,57 @@
+# Ambiente virtual Python
+.venv/
+venv/
+env/
+ENV/
+
+# Arquivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Banco de dados SQLite
+*.db
+*.sqlite3
+db.sqlite3
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Arquivos de distribuição
+dist/
+build/
+*.egg-info/
+
+# Arquivos de configuração local
+.env
+local_settings.py
+
+# Arquivos de cache
+.cache/
+.pytest_cache/
+
+# Arquivos de cobertura de teste
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+media/
+staticfiles/
+static/

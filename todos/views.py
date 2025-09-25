@@ -1,13 +1,19 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import ListView
+=======
+from django.views.generic import ListView, CreateView
+from django.urls import reverse_lazy
+>>>>>>> 8aedc00d3b14aa44351c0a82e58953b17759622c
 from .models import Todo
 
 class TodoListView(ListView):
     model = Todo
+<<<<<<< HEAD
     template_name = "todos/todo_list.html"
     context_object_name = "todos"
 
@@ -69,3 +75,12 @@ def blog_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+=======
+    template_name = "todos/todo_list.html"  
+    context_object_name = "todos"           
+        
+class TodoCreateView(CreateView):
+    model = Todo
+    fields = ["title", "description"]
+    success_url = reverse_lazy("todo_list")
+>>>>>>> 8aedc00d3b14aa44351c0a82e58953b17759622c
