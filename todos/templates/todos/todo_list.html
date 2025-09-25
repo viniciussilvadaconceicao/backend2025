@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Lista de Tarefas</title>
+    <title>Lista de Tarefas</title>
 </head>
 <body>
-  <h1>Lista de Tarefas</h1>
-  <ul>
+    <h1>Lista de Tarefas</h1>
+    <ul>
     {% for todo in todos %}
-      <li><strong>{{ todo.title }}</strong> - {{ todo.description }}
+        <li>{{ todo.title }}</li>
     {% empty %}
-      <li>Nenhuma tarefa cadastrada</li>
+        <li>Nenhuma tarefa encontrada.</li>
     {% endfor %}
-  </ul>
+    </ul>
 </body>
 </html>

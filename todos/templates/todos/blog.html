@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Blog</title>
+  <link rel="stylesheet" href="{% static 'todos/css/blog.css' %}">
+</head>
+
+<body>
+<header>
+	<h1>Meu Blog</h1>
+    <nav>
+      <a href="{% url 'blog' %}">Início</a> |
+      <a href="#">Posts</a> |
+      <a href="#">Contato</a> |
+      <a href="{% url 'logout' %}">Sair</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="item">
+        <h2>Como Aprender HTML</h2>
+        <p>Dicas essenciais para iniciantes</p>
+        <button id="botaoA">Ler mais</button>
+      </div>
+        <div class="item">
+        <h2>CSS Flexbox</h2>
+        <p>Guia completo de layouts</p>
+        <button id="botaoB">Ler mais</button>
+      </div>
+        <div class="item">
+        <h2>JavaScript Básico</h2>
+        <p>Fundamentos da programação</p>
+        <button id="botaoC">Ler mais</button>
+      </div>
+        <div class="item">
+        <h2>Projetos Web</h2>
+        <p>Portfolio e experiência</p>
+        <button id="botaoD">Ler mais</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Meu Blog. Todos os direitos reservados.
+  </footer>
+
+  <script src="{% static 'todos/js/script.js' %}"></script>
+</body>
+</html>

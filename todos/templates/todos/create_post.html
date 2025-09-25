@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Post - Meu Blog</title>
+  <link rel="stylesheet" href="{% static 'todos/css/blog.css' %}">
+</head>
+
+<body>
+<header>
+	<h1>Meu Blog</h1>
+    <nav>
+      <a href="{% url 'blog' %}">Início</a> |
+      <a href="#">Criar Post</a> |
+      <a href="#">Contato</a> |
+      <a href="{% url 'logout' %}">Sair</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="create-post-container">
+      <div class="breadcrumb">
+        <a href="{% url 'blog' %}">Início</a> > Criar Post
+      </div>
+
+      <h2>Criar Novo Post</h2>
+
+      <form method="POST" class="create-post-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+          <label for="title">Título do Post</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="content">Conteúdo</label>
+          <textarea id="content" name="content" rows="15" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <a href="{% url 'blog' %}" class="cancel-btn">Cancelar</a>
+          <button type="submit" class="submit-btn">Publicar Post</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Meu Blog. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
