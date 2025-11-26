@@ -1,0 +1,8 @@
+<h1>Confirm</h1>
+<p>Are you sure you want to delete <strong>{{ object.titulo }}</strong>?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Yes, Delete</button>
+  <a href="{% url 'filme_list' %}">Cancel</a>
+</form>

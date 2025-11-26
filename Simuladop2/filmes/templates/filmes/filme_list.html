@@ -1,0 +1,18 @@
+<h1>Filme List</h1>
+
+<ul>
+  {% for filme in filmes %}
+  <li>
+    <strong>{{ filme.titulo }}</strong>
+    <br />
+    Author: {{ filme.diretor }} <br />
+    Nota: {{filme.nota}}
+    <a href="{% url 'filme_update' filme.pk %}">Edit</a> |
+    <a href="{% url 'filme_delete' filme.pk %}">Delete</a>
+  </li>
+  {% empty %}
+  <li>No film found.</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'filme_create' %}">Add Filme</a>
