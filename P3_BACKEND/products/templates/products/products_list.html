@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3_Backend</title>
+</head>
+<body>
+    <h1>Seus produtos</h1>
+        <ul>
+            {% for produto in products %}
+            <li>
+                {{ produto.name }} - R$ {{ produto.price }}
+                <br>{{ produto.category }}
+                <br>
+                <a href="{% url 'products_update' produto.pk %}">Editar</a> |
+                <a href="{% url 'products_delete' produto.pk %}">Deletar</a>
+                <br><br>
+            </li>
+            {% empty %}
+            <li>No products found.</li>
+            {% endfor %}
+        </ul>
+<a href="{% url 'products_create' %}">Novo Produto</a>
+</body>
+</html>
